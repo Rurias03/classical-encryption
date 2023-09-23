@@ -24,9 +24,14 @@ public class VigenereCipher {
         } // if()
 
         // Check if the plaintext/ciphertext and keyword consist only of lowercase characters
-        if (!isLowerCase(message) || !isLowerCase(keyword)) {
+        if (!CipherUtils.isLowerCase(message) || !CipherUtils.isLowerCase(keyword)) {
             System.err.println("Input should consist only of lowercase characters");
             System.exit(1);
+        } // if()
+
+        // If the keyword is empty, treat it as if it repeats 'a'
+        if (keyword.isEmpty()) {
+            keyword = "a";
         } // if()
 
         String result = "";
@@ -45,19 +50,8 @@ public class VigenereCipher {
         System.out.println(result);
     } // main(String)
 
-    // Function to check if a string consists only of lowercase characters
-    public static boolean isLowerCase(String s) {
-        for (char ch : s.toCharArray()) {
-            if (ch < 'a' || ch > 'z') {
-                return false;
-            } // if()
-        } // for()
-        return true;
-    } // isLowerCase(String)
-
     // Function to perform the Vigenere shift for encoding
     public static char shift(char messageChar, char keywordChar, boolean encode) {
-        int shift = keywordChar - 'a';
-        return (char) (((messageChar - 'a' + (encode ? shift : -shift) + 26) % 26) + 'a');
+        return CipherUtils.vigenereShift(messageChar, keywordChar, encode);
     } // shift(char, char, boolean)
 } // class VigenereCipher
