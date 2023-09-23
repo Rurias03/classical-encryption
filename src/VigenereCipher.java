@@ -50,7 +50,14 @@ public class VigenereCipher {
         System.out.println(result);
     } // main(String)
 
-    // Function to perform the Vigenere shift for encoding
+    /**
+     * Shift a character using the Vigenere Cipher with a given keyword character
+     *
+     * @param messageChar The character from the message to be shifted
+     * @param keywordChar The character from the Vigenere keyword to determine the shift
+     * @param encode      true to encode the character, false to decode
+     * @return The shifted character
+     */
     public static char shift(char messageChar, char keywordChar, boolean encode) {
         return CipherUtils.vigenereShift(messageChar, keywordChar, encode);
     } // shift(char, char, boolean)
