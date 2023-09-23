@@ -3,7 +3,7 @@
  * however, unlike it that has a fixed key, this cipher uses a keyword to shift text
  * 
  * @author Rene Urias Jr
- * @version 1.? of 23 September 2023
+ * @version 1.4 of 23 September 2023
  */
 public class VigenereCipher {
     public static void main(String[] args) {
