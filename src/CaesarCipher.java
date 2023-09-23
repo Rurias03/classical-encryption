@@ -37,12 +37,23 @@ public class CaesarCipher {
         } // for()
     } // main(String)
 
-    // Function to encode a message using the Caesar Cipher with a given shift value (n)
+    /**
+     * Encode a message using the Caesar Cipher with a given shift value (n)
+     *
+     * @param message The input message to be encoded
+     * @param n       The shift value (n) for the Caesar Cipher
+     * @return The encoded message
+     */
     public static String encode(String message, int n) {
         return CipherUtils.caesarCipher(message, n, true);
     } // encode(String, int)
 
-    // Helper function to decode the message
+    /**
+     * Decode a message using the Caesar Cipher with a given shift value (n)
+     * @param message The input message to be decoded
+     * @param n       The shift value (n) for the Caesar Cipher
+     * @return The decoded message
+     */
     public static String decode(String message, int n) {
         return CipherUtils.caesarCipher(message, n, false);
     } // decode(String, int)
