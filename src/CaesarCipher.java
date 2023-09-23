@@ -3,7 +3,7 @@
  * subtract to each character of a given message to encrypt and decrypt respectfully.
  * 
  * @author Rene Urias Jr
- * @version 1.? of 23 September 2023
+ * @version 1.4 of 23 September 2023
  */
 public class CaesarCipher {
     public static void main(String[] args) {
